@@ -13,10 +13,12 @@ body, html{
 
 header{
     width: 100%;
-    padding: 8px 0;
-    margin-bottom: 16px;
-    box-shadow: 0px 1px 6px 1px #000000;
+    margin-bottom: 32px;
+    box-shadow: 0px 0px 10px -1px #000000;
     background-color: #263238;
+    position: relative;
+    padding-bottom: 16px;
+    filter: drop-shadow();
 }
 
 header h1{
@@ -40,12 +42,17 @@ section{
 .keyboard {
     display: flex;
     justify-content: center;
+    margin-bottom: 8px;
 }
 .key__container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px;
+    grid-gap: 8px;
 }
 
 .key, .reset{
@@ -58,14 +65,14 @@ section{
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 3px 3px 1px -1px #0000004a;
-    width: 60px;
-    height: 60px;
-    margin: 8px;
+    width: 50px;
+    height: 50px;
     outline: none;
 }
 
 .key:active,
-.reset:active{
+.reset:active,
+.play:active{
     box-shadow: 1px 1px 1px -1px #0000004a;
     outline: none;
 }
@@ -73,7 +80,21 @@ section{
     background: #980000;
     border-color: #980000;
 }
-
+.play{
+    font-family: 'Roboto Mono', monospace;
+    line-height: 50px;
+    font-size: 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 1px -1px #0000004a;
+    outline: none;
+    height: 50px;
+    background-color: green;
+    margin-right: 8px;
+    color: white;
+    grid-area: play;
+    width: 100%;
+}
 .display{
     display: flex;
     flex-direction: column;
@@ -81,10 +102,99 @@ section{
 }
 .output{
     width: 164px;
-    height: 40px;
+    height: 50px;
     border: 2px solid #000a12;
     margin-bottom: 8px;
-    line-height: 36px;
+    line-height: 48px;
     letter-spacing: 8px;
     font-family: 'Roboto Mono', monospace;
+    color: white;
+    font-size: 22px;
+}
+
+input.key:last-child {
+    grid-area: 4/2;
+}
+
+section.action-buttons {
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-auto-columns: 50px;
+    grid-template-areas: ". play play";
+    grid-gap: 8px;
+}
+
+.correct {
+    height: 50px;
+    width: 50px;
+    border: 2px solid;
+}
+
+.correct__area {
+    /* display: flex; */
+    /* justify-content: space-between; */
+    width: 164px;
+}
+
+.correct--titel >p {
+    color: white;
+    text-align: left;
+    margin: 0;
+    line-height: 48px;
+    font-size: 18px;
+}
+
+.correct__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.header--title {
+    padding: 8px 0px;
+}
+
+.round {
+    width: 48px;
+    height: 24px;
+    box-shadow: 0 0 10px -1px black;
+    border-radius: 12px;
+    background: #263238;
+    /* float: right; */
+}
+
+section.functionals {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: -24px;
+    padding:  0 16px;
+    align-items: center;
+}
+
+.round.__counter {
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: inset 0 0px 10px -1px black;
+}
+
+.round.__counter:after {
+    content: "";
+    background: #263238;
+    width: 48px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+}
+
+.round.__counter>p {
+    position: relative;
+    z-index: 1;
+    font-size: 24px;
+    line-height: 48px;
+    margin: 0;
+    color: white;
 }

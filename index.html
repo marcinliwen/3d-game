@@ -9,14 +9,29 @@
 </head>
 <body>
     <header>
-        <div><h1>3 digits game</h1></div>
-    </header>
-    <main>
+        <div class="header--title"><h1>3 digits game</h1></div>
         <section class="display">
             <div class="output user__input"></div>
-            <div class="output correct__digits"></div>
-            <div class="output correct__places"></div>
+            <div class="correct__area">
+                <div class="correct__container">
+                    <div class="correct--titel"><p>correct digits</p></div>
+                    <div class="correct __digits"></div>
+                </div>
+                <div class="correct__container ">
+                    <div class="correct--titel"><p>correct places</p></div>
+                    <div class="correct __places"></div>
+                </div>
+            </div>            
         </section>
+        <section class="functionals">
+            <div class="round __settings"></div>
+            <div class="round __counter"><p>4</p></div>
+            <div class="round __settings"></div>
+        </section>
+        
+    </header>
+    <main>
+        
         <section class="keyboard">
             <form class="key__container">
                <input type="button" class="key zero" value="0">
@@ -29,8 +44,13 @@
                <input type="button" class="key zero" value="7">
                <input type="button" class="key zero" value="8">
                <input type="button" class="key zero" value="9">
-               <input type="button" class="reset" value="C">
+               
             </form>
+            
+        </section>
+        <section class="action-buttons"> 
+            <div type="button" class="reset" >C</div>
+            <div type="button" class="play">check</div>
         </section>
     </main>
     <footer></footer>
