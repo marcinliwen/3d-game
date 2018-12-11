@@ -72,7 +72,7 @@ section{
 
 .key:active,
 .reset:active,
-.play:active{
+.check:active{
     box-shadow: 1px 1px 1px -1px #0000004a;
     outline: none;
 }
@@ -80,7 +80,7 @@ section{
     background: #980000;
     border-color: #980000;
 }
-.play{
+.check{
     font-family: 'Roboto Mono', monospace;
     line-height: 50px;
     font-size: 22px;
@@ -94,6 +94,7 @@ section{
     color: white;
     grid-area: play;
     width: 100%;
+    border: none;
 }
 .display{
     display: flex;
@@ -157,9 +158,9 @@ section.action-buttons {
 }
 
 .round {
-    width: 48px;
+    width: 54px;
     height: 24px;
-    box-shadow: 0 0 14px -3px black;
+    box-shadow: 0 0 14px -1px black;
     border-radius: 12px;
     background: #263238;
     /* float: right; */
@@ -175,7 +176,7 @@ section.functionals {
 }
 
 .round.__counter {
-    height: 48px;
+    height: 54px;
     border-radius: 50%;
 }
 
@@ -191,8 +192,13 @@ section.functionals {
 .round.__counter>p {
     position: relative;
     z-index: 1;
-    font-size: 24px;
-    line-height: 48px;
+    font-size: 32px;
+    line-height: 54px;
     margin: 0;
     color: white;
+}
+
+button.check:disabled {
+    opacity: .5;
+    cursor: default;
 }
