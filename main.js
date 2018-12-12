@@ -2,16 +2,32 @@ window.onload = () =>{
     
     const keys = document.getElementsByClassName('key');    
     const counterContener = document.querySelector('.__counter');
-   
     var countRounds = 0;
-
-
     //set user output
     var userOutput = document.querySelector('.user__input'); 
     userOutput.innerHTML = "XXX";
-
     var j = 1; //counter for digits
     var newValue = ""; //string for users input
+    
+   // var secretNumber = [0, 0, 0];
+    const main = document.getElementsByTagName('main')[0];
+    const header = document.getElementsByTagName('header')[0];
+    const display = document.querySelector('.display');
+
+    counterContener.addEventListener('click', function(){
+        var newnum = drawNumber();
+        console.log(newnum);
+        setTimeout(function(){
+            counterContener.style.transform = "scale(1)";
+            header.style.height = "40%";
+            setTimeout(function(){
+                main.style.transform = "translate(0, 0px)";
+            }, 550);
+            display.style.opacity = "1";
+            
+        }, 350);
+        
+    })
 
     //handle virtual keboard
     for(var i = 0; i < keys.length; i++){
@@ -57,7 +73,7 @@ window.onload = () =>{
     
     //reset vlues
     reset.addEventListener('click', function(){
-        
+        resetValues();
     })
 
     function resetValues(){
@@ -86,6 +102,22 @@ window.onload = () =>{
     //game over
     function gameOver(){
         alert('game over')
+    }
+
+    function drawNumber(){
+        var secretNumber =[];
+        for(var i = 0; i < 3; i++){
+            var x = randomDigit();
+            if(secretNumber.includes(x)){
+                return;
+            }
+            secretNumber.push(x);
+        }
+        return secretNumber;
+    }
+
+    function randomDigit(){
+        return Math.floor((Math.random() * 10) );
     }
 }
 
