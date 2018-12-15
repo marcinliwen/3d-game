@@ -26,10 +26,12 @@ window.onload = () =>{
             header.style.height = "40%";
             setTimeout(function(){
                 main.style.transform = "translate(0, 0px)";
+                counterContener.innerHTML = "";
             }, 550);
             display.style.opacity = "1";
             
         }, 350);
+        
         
     })
 

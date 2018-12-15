@@ -195,6 +195,9 @@ section.functionals {
     height: 54px;
     border-radius: 50%;
     transform: scale(1.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .round.__counter:after {
@@ -227,4 +230,10 @@ button.check:disabled {
 .round.__counter:active {
     box-shadow: 0 0 8px -1px black;
     transition-duration: 0s;
+}
+
+.round.__counter > svg {
+    color: white;
+    height: 40%;
+    margin-left: 5px;
 }
