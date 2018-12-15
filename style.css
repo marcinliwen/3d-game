@@ -119,6 +119,7 @@ section{
     font-family: 'Roboto Mono', monospace;
     color: white;
     font-size: 22px;
+    border-radius: 40px;
 }
 
 input.key:last-child {
@@ -136,9 +137,13 @@ section.action-buttons {
 }
 
 .correct {
-    height: 40px;
-    width: 40px;
-    border: 2px solid;
+    /* height: 40px; */
+    /* width: 40px; */
+    /* border: 2px solid; */
+    color: #fff;
+    line-height: 21px;
+    font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .correct__area {
@@ -151,14 +156,17 @@ section.action-buttons {
     color: white;
     text-align: left;
     margin: 0;
-    line-height: 48px;
     font-size: 18px;
+    line-height: 21px;
 }
 
 .correct__container {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
+    border: 2px solid black;
+    border-radius: 22px;
+    padding: 4px 12px;
 }
 
 .header--title {

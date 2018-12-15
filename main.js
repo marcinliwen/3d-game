@@ -2,21 +2,25 @@ window.onload = () =>{
     
     const keys = document.getElementsByClassName('key');    
     const counterContener = document.querySelector('.__counter');
+    const correctDigits = document.querySelector('.__digits');
+    const correctPlaces = document.querySelector('.__places');
     var countRounds = 0;
     //set user output
     var userOutput = document.querySelector('.user__input'); 
     userOutput.innerHTML = "XXX";
     var j = 1; //counter for digits
     var newValue = ""; //string for users input
-    
+    var userInput = []; //array for user input
+
+    var secretNumber;
    // var secretNumber = [0, 0, 0];
     const main = document.getElementsByTagName('main')[0];
     const header = document.getElementsByTagName('header')[0];
     const display = document.querySelector('.display');
 
     counterContener.addEventListener('click', function(){
-        var newnum = drawNumber();
-        console.log(newnum);
+        secretNumber = drawNumber();
+        console.log(secretNumber);
         setTimeout(function(){
             counterContener.style.transform = "scale(1)";
             header.style.height = "40%";
@@ -32,15 +36,24 @@ window.onload = () =>{
     //handle virtual keboard
     for(var i = 0; i < keys.length; i++){
         keys[i].addEventListener('click', function(){   
-            newValue += this.value;
-            // alow chose digit 3 time   
-            if( j < 4){
-                replaceX(newValue, j);
-                j++;  
-            }  
-            if(j > 3){ //if user input 3 digits enable button to check
-                document.querySelector('.check').disabled = false;  
-            }                 
+            
+            userValue = parseInt(this.value);
+
+            if(!userInput.includes(userValue)){
+                newValue += this.value;
+                // alow chose digit 3 time   
+                if( j < 4){
+                    replaceX(newValue, j);
+                    userInput.push(userValue);
+                    j++;  
+                }  
+                if(j > 3){ //if user input 3 digits enable button to check
+                    document.querySelector('.check').disabled = false;  
+                }         
+            }else{
+                alert('you had used this number before')
+            }
+                    
         })  
     }
     
@@ -52,7 +65,9 @@ window.onload = () =>{
         //there is only 10 round in Game
         if(currentRound < 11){
             displayCurrentRound(currentRound);
+            checkInput(userInput, secretNumber);
         }else{
+
             gameOver();
         };
         //disable check button
@@ -80,8 +95,9 @@ window.onload = () =>{
         userOutput.innerHTML = "XXX";
         j = 1;
         newValue = "";
+        userInput = [];
     }
-    //count game
+    //count game rounds
     function countMyRound(){
        return countRounds += 1;
     }
@@ -108,8 +124,8 @@ window.onload = () =>{
         var secretNumber =[];
         for(var i = 0; i < 3; i++){
             var x = randomDigit();
-            if(secretNumber.includes(x)){
-                return;
+            while(secretNumber.includes(x)){
+                x = randomDigit();
             }
             secretNumber.push(x);
         }
@@ -118,6 +134,30 @@ window.onload = () =>{
 
     function randomDigit(){
         return Math.floor((Math.random() * 10) );
+    }
+
+    
+    function checkInput(userInput, secretNumber){
+        console.log(userInput );
+        var position = 0;
+        var correct = 0;
+        for(var i = 0; i < 3; i++){
+            if(userInput[i]==secretNumber[i]){
+                position += 1;
+            };
+            if(secretNumber.includes(userInput[i])){
+                correct += 1;
+            }
+        }
+        if(position == 3){
+            console.log('win')
+        }else{
+            correctDigits.innerHTML = correct;
+            correctPlaces.innerHTML = position;
+            console.log(
+                'correct position: '+ position +"\n"+'correct digits: ' + correct
+            )
+        }
     }
 }
 
