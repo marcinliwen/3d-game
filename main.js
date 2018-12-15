@@ -4,16 +4,18 @@ window.onload = () =>{
     const counterContener = document.querySelector('.__counter');
     const correctDigits = document.querySelector('.__digits');
     const correctPlaces = document.querySelector('.__places');
+    
     var countRounds = 0;
     //set user output
     var userOutput = document.querySelector('.user__input'); 
     userOutput.innerHTML = "XXX";
     var j = 1; //counter for digits
     var newValue = ""; //string for users input
+    var userInputStrings = [];
     var userInput = []; //array for user input
 
     var secretNumber;
-   // var secretNumber = [0, 0, 0];
+    // var secretNumber = [0, 0, 0];
     const main = document.getElementsByTagName('main')[0];
     const header = document.getElementsByTagName('header')[0];
     const display = document.querySelector('.display');
@@ -25,8 +27,10 @@ window.onload = () =>{
             counterContener.style.transform = "scale(1)";
             header.style.height = "40%";
             setTimeout(function(){
-                main.style.transform = "translate(0, 0px)";
+                main.style.transform = "translate(0px, 0px)";
                 counterContener.innerHTML = "";
+                correctDigits.style.transform = "translate(-16px, 0px)";
+                correctPlaces.style.transform = "translate(16px, 0px)";
             }, 550);
             display.style.opacity = "1";
             
@@ -74,8 +78,11 @@ window.onload = () =>{
         };
         //disable check button
         this.disabled = true;
+        //put current user input to array
+        userInputStrings.push(newValue);
         //reset values
         resetValues();
+        printUserInputs(userInputStrings);
     })
 
     //replace x with user input
@@ -96,6 +103,7 @@ window.onload = () =>{
     function resetValues(){
         userOutput.innerHTML = "XXX";
         j = 1;
+        
         newValue = "";
         userInput = [];
     }
@@ -105,8 +113,7 @@ window.onload = () =>{
     }
 
     //display current game round
-    function displayCurrentRound(num){        
-        
+    function displayCurrentRound(num){     
         if (counterContener.hasChildNodes()) {
             counterContener.removeChild(counterContener.childNodes[0]);
         }
@@ -160,6 +167,11 @@ window.onload = () =>{
                 'correct position: '+ position +"\n"+'correct digits: ' + correct
             )
         }
+    }
+
+    const userInputs = document.querySelector('.user_inputs');
+    function printUserInputs(userInputStrings){
+        userInputs.innerHTML = userInputStrings;
     }
 }
 

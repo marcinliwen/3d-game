@@ -186,7 +186,7 @@ section.functionals {
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: -24px;
+    bottom: -26px;
     padding:  0 16px;
     align-items: center;
 }
@@ -198,6 +198,8 @@ section.functionals {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .round.__counter:after {
@@ -224,7 +226,10 @@ button.check:disabled {
 }
 
 .round.__settings {
-    display: none;
+    /*display: none;*/
+    color:  #fff;
+    line-height: 24px;
+    font-family: Roboto monospace;
 }
 
 .round.__counter:active {
@@ -236,4 +241,17 @@ button.check:disabled {
     color: white;
     height: 40%;
     margin-left: 5px;
+}
+
+.round.__settings.__digits {
+    transform: translate(53px, 0px);
+}
+
+.round.__settings.__places {
+    transform: translate(-52px, 0px);
+}
+
+.user_inputs {
+    color: #fff;
+    font-family: 'Roboto Mono';
 }
