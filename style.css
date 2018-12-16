@@ -87,21 +87,22 @@ section{
     outline: none;
 }
 .reset{
-    background: #980000;
-    border-color: #980000;
+    background: #718792;
+    border-color: #718792;
 }
 .check{
     font-family: 'Roboto Mono', monospace;
-    line-height: 50px;
+    line-height: 42px;
     font-size: 22px;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 3px 3px 1px -1px #0000004a;
     outline: none;
     height: 50px;
-    background-color: green;
+    background-color: #718792;
     margin-right: 8px;
     color: #fff;
+    text-transform: uppercase;
     grid-area: play;
     width: 100%;
     border: none;
