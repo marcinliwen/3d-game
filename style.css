@@ -266,6 +266,7 @@ button.check:disabled {
     font-family: 'Roboto Mono';
     flex: 1;
     padding: 8px 0px;
+    max-width: 164px;
 }
 
 .correct--container {
