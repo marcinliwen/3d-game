@@ -21,7 +21,7 @@ header{
     padding-bottom: 16px;
     display: flex;
     flex-direction: column;
-    filter: drop-shadow();
+    align-items: center;
     z-index: 1;
     height: 50%;
 }
@@ -298,4 +298,8 @@ aside.descritption li {
 
 .header--title span {
     display: block;
+}
+
+aside.descritption ol {
+    padding-left: 8px;
 }
