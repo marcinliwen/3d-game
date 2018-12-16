@@ -38,9 +38,9 @@ window.onload = () =>{
         
         
     })
-
+/*
     //handle virtual keboard
-    for(var i = 0; i < keys.length; i++){
+    for(var i = 0; i < keys.length; i++){   
         keys[i].addEventListener('click', function(){   
             
             userValue = parseInt(this.value);
@@ -63,7 +63,34 @@ window.onload = () =>{
         })  
     }
     
-    
+*/
+    /**
+     * 
+     * for.. of loop
+     * handle virtual keyboard
+     */
+    for(const key of keys){
+        key.addEventListener('click', function(){   
+            
+            userValue = parseInt(this.value);
+
+            if(!userInput.includes(userValue)){
+                newValue += this.value;
+                // alow chose digit 3 time   
+                if( j < 4){
+                    replaceX(newValue, j);
+                    userInput.push(userValue);
+                    j++;  
+                }  
+                if(j > 3){ //if user input 3 digits enable button to check
+                    document.querySelector('.check').disabled = false;  
+                }         
+            }else{
+                alert('you had used this number before')
+            }
+                    
+        })  
+    }
     
     //event listener for checking number - next round
     document.querySelector('.check').addEventListener('click', function(){
