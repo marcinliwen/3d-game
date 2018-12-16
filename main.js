@@ -4,7 +4,9 @@ window.onload = () =>{
     const counterContener = document.querySelector('.__counter');
     const correctDigits = document.querySelector('.__digits');
     const correctPlaces = document.querySelector('.__places');
-    
+    const headerTitle = document.querySelector('.header--title');
+    const description = document.querySelector('.descritption');
+
     var countRounds = 0;
     //set user output
     var userOutput = document.querySelector('.user__input'); 
@@ -21,18 +23,23 @@ window.onload = () =>{
     const display = document.querySelector('.display');
 
     counterContener.addEventListener('click', function(){
+        var headerhight = headerTitle.offsetHeight;
+        
         secretNumber = drawNumber();
         console.log(secretNumber);
         setTimeout(function(){
+            description.style.opacity = "0";
             counterContener.style.transform = "scale(1)";
             header.style.height = "40%";
             setTimeout(function(){
                 main.style.transform = "translate(0px, 0px)";
                 counterContener.innerHTML = "";
                 correctDigits.style.transform = "translate(-16px, 0px)";
-                correctPlaces.style.transform = "translate(16px, 0px)";
+                correctPlaces.style.transform = "translate(16px, 0px)";                
+                headerTitle.style.marginTop = "-"+headerhight+"px";                
+                display.style.opacity = "1";
             }, 550);
-            display.style.opacity = "1";
+            
             
         }, 350);
         
@@ -70,14 +77,12 @@ window.onload = () =>{
      * handle virtual keyboard
      */
     for(const key of keys){
-        key.addEventListener('click', function(){   
-            
+        key.addEventListener('click', function(){             
             userValue = parseInt(this.value);
-
-            if(!userInput.includes(userValue)){
-                newValue += this.value;
+            if(!userInput.includes(userValue)){                
                 // alow chose digit 3 time   
                 if( j < 4){
+                    newValue += this.value;
                     replaceX(newValue, j);
                     userInput.push(userValue);
                     j++;  

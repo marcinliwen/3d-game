@@ -19,6 +19,8 @@ header{
     background-color: #263238;
     position: relative;
     padding-bottom: 16px;
+    display: flex;
+    flex-direction: column;
     filter: drop-shadow();
     z-index: 1;
     height: 50%;
@@ -27,9 +29,10 @@ header{
 header h1{
     margin: 0px;
     text-align: center;
-    letter-spacing: -2px;
+    letter-spacing: 0px;
     color: #fffffff2;
     text-transform: capitalize;
+    font-size: 32px;
 }
 main{
     width: 100%;
@@ -42,7 +45,7 @@ main{
 
 section{
     width: 100%;
-    margin: auto;
+    /* margin: auto; */
     text-align: center;
 }
 
@@ -108,18 +111,22 @@ section{
     flex-direction: column;
     align-items: center;
     opacity: 0;
+    flex: 1;
+    padding-top: 16px;
 }
 .output{
-    width: 164px;
-    height: 40px;
-    border: 2px solid #000a12;
+    padding: 4px 22px;
+    /* height: 40px; */
+    /* border: 2px solid #000a12; */
     margin-bottom: 8px;
-    line-height: 36px;
+    /* line-height: 36px; */
     letter-spacing: 8px;
     font-family: 'Roboto Mono', monospace;
-    color: white;
+    color: #28e0ff;
     font-size: 22px;
-    border-radius: 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 0 14px -2px black;
 }
 
 input.key:last-child {
@@ -171,6 +178,7 @@ section.action-buttons {
 
 .header--title {
     padding: 8px 0px;
+    width: 320px;
 }
 
 .round {
@@ -238,7 +246,7 @@ button.check:disabled {
 }
 
 .round.__counter > svg {
-    color: white;
+    color: #28e0ff;
     height: 40%;
     margin-left: 5px;
 }
@@ -254,4 +262,39 @@ button.check:disabled {
 .user_inputs {
     color: #fff;
     font-family: 'Roboto Mono';
+    flex: 1;
+    padding: 8px 0px;
+}
+
+.correct--container {
+    display: flex;
+}
+
+.correct--container>div {
+    padding: 0 32px;
+}
+
+div {}
+
+.correct--container p {
+    margin: 0;
+    color: #28e0ff;
+}
+
+span.user__input {
+    padding-left: 8px;
+}
+
+aside.descritption {
+    color: #b0b3ce;
+    position: absolute;
+    top: 30%;
+}
+
+aside.descritption li {
+    margin-bottom: 4px;
+}
+
+.header--title span {
+    display: block;
 }
