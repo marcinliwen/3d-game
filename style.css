@@ -296,6 +296,7 @@ aside.descritption {
     color: #fff;
     position: absolute;
     top: 130%;
+    padding-left: 8px;
 }
 
 aside.descritption li {
@@ -307,7 +308,8 @@ aside.descritption li {
     text-transform: lowercase;
     font-size: 18px;
     letter-spacing: 6px;
-    margin-bottom: 16vh;
+    margin-bottom: 12vh;
+    margin-top: 32px;
 }
 
 aside.descritption ol {
