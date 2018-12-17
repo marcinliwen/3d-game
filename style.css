@@ -89,10 +89,13 @@ section{
 .reset{
     background: #718792;
     border-color: #718792;
+    border: none;
+    border-bottom: 5px solid red;
+    line-height: 46px;
 }
 .check{
     font-family: 'Roboto Mono', monospace;
-    line-height: 42px;
+    line-height: 44px;
     font-size: 22px;
     border-radius: 5px;
     cursor: pointer;
@@ -106,6 +109,7 @@ section{
     grid-area: play;
     width: 100%;
     border: none;
+    border-bottom: 5px solid green;
 }
 .display{
     display: flex;
@@ -291,7 +295,7 @@ span.user__input {
 aside.descritption {
     color: #fff;
     position: absolute;
-    top: 30%;
+    top: 130%;
 }
 
 aside.descritption li {
@@ -300,6 +304,10 @@ aside.descritption li {
 
 .header--title span {
     display: block;
+    text-transform: lowercase;
+    font-size: 18px;
+    letter-spacing: 6px;
+    margin-bottom: 16vh;
 }
 
 aside.descritption ol {

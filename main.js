@@ -38,6 +38,8 @@ window.onload = () =>{
                 correctPlaces.style.transform = "translate(16px, 0px)";                
                 headerTitle.style.marginTop = "-"+headerhight+"px";                
                 display.style.opacity = "1";
+                description.style.display = "none";
+
             }, 550);
             
             
@@ -91,7 +93,7 @@ window.onload = () =>{
                     document.querySelector('.check').disabled = false;  
                 }         
             }else{
-                alert('you had used this number before')
+                alert('you have used this number before')
             }
                     
         })  
@@ -159,6 +161,7 @@ window.onload = () =>{
     //game over
     function gameOver(){
         alert('game over')
+        resetValues();
     }
 
     function drawNumber(){
@@ -191,7 +194,8 @@ window.onload = () =>{
             }
         }
         if(position == 3){
-            console.log('win')
+            console.log('win');
+            youWin();
         }else{
             correctDigits.innerHTML = correct;
             correctPlaces.innerHTML = position;
@@ -203,7 +207,14 @@ window.onload = () =>{
 
     const userInputs = document.querySelector('.user_inputs');
     function printUserInputs(userInputStrings){
-        userInputs.innerHTML = userInputStrings;
+        userInputs.innerHTML = userInputStrings.join(' ');
+    }
+
+    function youWin(){
+        userOutput.innerHTML = "you win!";
+        j = 1;        
+        newValue = "";
+        userInput = [];
     }
 }
 
