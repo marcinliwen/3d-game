@@ -105,7 +105,9 @@ window.onload = () =>{
         //there is only 10 round in Game
         if(currentRound < 11){
             displayCurrentRound(currentRound);
-            checkInput(userInput, secretNumber);
+            if(checkInput(userInput, secretNumber)){
+                return;
+            };
         }else{
 
             gameOver();
@@ -160,7 +162,7 @@ window.onload = () =>{
 
     //game over
     function gameOver(){
-        alert('game over')
+        userInputs.innerHTML = "game over";
         resetValues();
     }
 
@@ -194,8 +196,11 @@ window.onload = () =>{
             }
         }
         if(position == 3){
+            correctDigits.innerHTML = 3;
+            correctPlaces.innerHTML = 3;
             console.log('win');
             youWin();
+            return true;
         }else{
             correctDigits.innerHTML = correct;
             correctPlaces.innerHTML = position;
@@ -211,10 +216,17 @@ window.onload = () =>{
     }
 
     function youWin(){
-        userOutput.innerHTML = "you win!";
-        j = 1;        
-        newValue = "";
-        userInput = [];
+        //userOutput.innerHTML = userInput;
+        userOutput.style.color = "green";
+        userInputs.innerHTML = "you win!";
+        setTimeout(function(){
+            main.style.transform = "translate(0px, -330px)";
+            counterContener.style.transform = "scale(1.5)";
+            header.style.height = "50%";
+        }, 550)
+        //j = 1;        
+        //newValue = "";
+        //userInput = [];
     }
 }
 
