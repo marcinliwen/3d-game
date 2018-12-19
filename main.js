@@ -103,7 +103,7 @@ window.onload = () =>{
     document.querySelector('.check').addEventListener('click', function(){
         var currentRound = countMyRound();
         //there is only 10 round in Game
-        if(currentRound < 11){
+        if(currentRound < 15){
             displayCurrentRound(currentRound);
             if(checkInput(userInput, secretNumber)){
                 return;
