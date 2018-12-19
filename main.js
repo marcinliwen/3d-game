@@ -218,7 +218,7 @@ window.onload = () =>{
     function youWin(){
         //userOutput.innerHTML = userInput;
         userOutput.style.color = "green";
-        userInputs.innerHTML = "you win!";
+        userInputs.innerHTML = "you found the secret number";
         setTimeout(function(){
             main.style.transform = "translate(0px, -330px)";
             counterContener.style.transform = "scale(1.5)";
