@@ -7,21 +7,37 @@
     <title>3D Game</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body, html {
-            width: 100%;
-            height: 100%;
-            margin: 0px;
-            padding: 0px;
+            .loader-container{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            right: 0px;
             background: #263238;
-        }   
-        main {
-            width: 100%;
+            z-index: 1;
             display: flex;
-            flex-direction: column;
-            position: relative;
-            z-index: 0;
-            transform: translate(0, -330px);
-        }    
+            justify-content: center;
+            align-items: center;
+        }
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
