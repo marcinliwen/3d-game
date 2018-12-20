@@ -6,7 +6,9 @@ window.onload = () =>{
     const correctPlaces = document.querySelector('.__places');
     const headerTitle = document.querySelector('.header--title');
     const description = document.querySelector('.descritption');
-
+    const correctness = document.querySelector('.correct--container');
+    const svgPlay  = document.querySelector('.svg-play');
+    const playNode = svgPlay.cloneNode(true);
     var countRounds = 0;
     //set user output
     var userOutput = document.querySelector('.user__input'); 
@@ -23,11 +25,15 @@ window.onload = () =>{
     const display = document.querySelector('.display');
 
     counterContener.addEventListener('click', function(){
+        countRounds = 0;
         var headerhight = headerTitle.offsetHeight;
-        
+        userOutput.innerHTML = "XXX";
+        correctDigits.innerHTML ="";
+        correctPlaces.innerHTML = "";
         secretNumber = drawNumber();
         console.log(secretNumber);
         setTimeout(function(){
+            userInputs.innerHTML = "";
             description.style.opacity = "0";
             counterContener.style.transform = "scale(1)";
             header.style.height = "40%";
@@ -38,6 +44,7 @@ window.onload = () =>{
                 correctPlaces.style.transform = "translate(16px, 0px)";                
                 headerTitle.style.marginTop = "-"+headerhight+"px";                
                 display.style.opacity = "1";
+                correctness.style.opacity = "1";
                 description.style.display = "none";
 
             }, 550);
@@ -105,7 +112,7 @@ window.onload = () =>{
         //there is only 10 round in Game
         if(currentRound < 15){
             displayCurrentRound(currentRound);
-            if(checkInput(userInput, secretNumber)){
+            if(checkInput(userInput, secretNumber, currentRound)){
                 return;
             };
         }else{
@@ -183,7 +190,7 @@ window.onload = () =>{
     }
 
     
-    function checkInput(userInput, secretNumber){
+    function checkInput(userInput, secretNumber, currentRound){
         console.log(userInput );
         var position = 0;
         var correct = 0;
@@ -199,7 +206,7 @@ window.onload = () =>{
             correctDigits.innerHTML = 3;
             correctPlaces.innerHTML = 3;
             console.log('win');
-            youWin();
+            youWin(currentRound);
             return true;
         }else{
             correctDigits.innerHTML = correct;
@@ -215,18 +222,25 @@ window.onload = () =>{
         userInputs.innerHTML = userInputStrings.join(' ');
     }
 
-    function youWin(){
+    function youWin(currentRound){
         //userOutput.innerHTML = userInput;
         userOutput.style.color = "green";
-        userInputs.innerHTML = "you found the secret number";
+        userInputs.innerHTML = "you found the secret number in "+ currentRound +" moves";
         setTimeout(function(){
             main.style.transform = "translate(0px, -330px)";
             counterContener.style.transform = "scale(1.5)";
+            counterContener.innerHTML = "";
+            counterContener.appendChild(playNode);
             header.style.height = "50%";
+            correctDigits.style.transform = "translate(53px, 0px)";
+            correctPlaces.style.transform = "translate(-52px, 0px)";
+            correctness.style.opacity = "0";
+            
         }, 550)
-        //j = 1;        
-        //newValue = "";
-        //userInput = [];
+        j = 1;
+        
+        newValue = "";
+        userInput = [];
     }
 }
 
