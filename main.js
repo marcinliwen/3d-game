@@ -3,7 +3,10 @@
 
 window.onload = () =>{
     const loader = document.querySelector('.loader-container');
-    loader.style.display = " none";
+    setTimeout(function(){
+        loader.style.display = " none";
+    }, 500)
+    
 
 
     const keys = document.getElementsByClassName('key');    
