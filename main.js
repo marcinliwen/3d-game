@@ -1,5 +1,12 @@
+const loader = document.querySelector('.loader-container');
+window.addEventListener("load", function(event) {
+    console.log("All resources finished loading!");
+    loader.style.display = " none";
+  });
+
+
 window.onload = () =>{
-    const loader = document.querySelector('.loader-container');
+    
     const keys = document.getElementsByClassName('key');    
     const counterContener = document.querySelector('.__counter');
     const correctDigits = document.querySelector('.__digits');
@@ -24,7 +31,8 @@ window.onload = () =>{
     const header = document.getElementsByTagName('header')[0];
     const display = document.querySelector('.display');
 
-    loader.style.display = " none";
+    
+    
 
     counterContener.addEventListener('click', function(){
         countRounds = 0;
