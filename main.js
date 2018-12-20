@@ -1,6 +1,3 @@
-
-
-
 window.onload = () =>{
     const loader = document.querySelector('.loader-container');
     setTimeout(function(){
