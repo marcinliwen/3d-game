@@ -2,7 +2,7 @@ window.onload = () =>{
     const loader = document.querySelector('.loader-container');
     setTimeout(function(){
         loader.style.display = " none";
-    }, 1500)
+    }, 500)
     
 
 
