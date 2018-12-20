@@ -1,12 +1,11 @@
-const loader = document.querySelector('.loader-container');
-window.addEventListener("load", function(event) {
-    console.log("All resources finished loading!");
-    loader.style.display = " none";
-  });
+
 
 
 window.onload = () =>{
-    
+    const loader = document.querySelector('.loader-container');
+    loader.style.display = " none";
+
+
     const keys = document.getElementsByClassName('key');    
     const counterContener = document.querySelector('.__counter');
     const correctDigits = document.querySelector('.__digits');
