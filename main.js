@@ -1,5 +1,5 @@
 window.onload = () =>{
-    
+    const loader = document.querySelector('.loader-container');
     const keys = document.getElementsByClassName('key');    
     const counterContener = document.querySelector('.__counter');
     const correctDigits = document.querySelector('.__digits');
@@ -23,6 +23,8 @@ window.onload = () =>{
     const main = document.getElementsByTagName('main')[0];
     const header = document.getElementsByTagName('header')[0];
     const display = document.querySelector('.display');
+
+    loader.style.display = " none";
 
     counterContener.addEventListener('click', function(){
         countRounds = 0;
