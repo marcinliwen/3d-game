@@ -1,7 +1,7 @@
 {
   "short_name": "3dgame",
   "name": "3D Game",
-  "start_url": "/index.html",
+  "start_url": "/",
   "background_color": "#263238",
   "display": "standalone",
   "scope": "/",
