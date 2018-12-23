@@ -6,39 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>3D Game</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-            .loader-container{
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            bottom: 0px;
-            right: 0px;
-            background: #263238;
-            z-index: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .loader {
-            border: 16px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 16px solid #3498db;
-            width: 120px;
-            height: 120px;
-            -webkit-animation: spin 2s linear infinite; /* Safari */
-            animation: spin 2s linear infinite;
-        }
-        /* Safari */
-        @-webkit-keyframes spin {
-            0% { -webkit-transform: rotate(0deg); }
-            100% { -webkit-transform: rotate(360deg); }
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -103,6 +70,12 @@
     <footer></footer>
     <div class="loader-container">
         <div class="loader"></div>
+        <div class="loader-2"></div>
+        <div class="loader-2 --next-1"></div>
+        <div class="loader-2 --next-2"></div>
+        
+        
+        
     </div>    
     <script src="main.js"></script>
 </body>

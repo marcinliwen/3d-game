@@ -1,8 +1,9 @@
 window.onload = () =>{
+    
     const loader = document.querySelector('.loader-container');
     setTimeout(function(){
         loader.style.display = " none";
-    }, 500)
+    }, 4000)
     
 
 

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
+:root{
+    --glow-color: #28e0ff;
+    --dark-color: #263238;
+}
 *{
     box-sizing: border-box;
     transition: all .55s ease-in-out;
@@ -281,8 +285,6 @@ button.check:disabled {
     padding: 0 32px;
 }
 
-div {}
-
 .correct--container p {
     margin: 0;
     color: #fff;
@@ -326,23 +328,53 @@ aside.descritption ol {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .loader {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
+    width: 0px;
+    height: 4px;
+     /* Safari */
+    background: var(--glow-color);
+    animation: spin 3s  ease-in-out;
+    position: absolute;
   }
-/* Safari */
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
+.loader-2{
+    height: 4px;
+    width: 8px;
+    background: var(--glow-color);
+    animation: spin-2 3s  0.4s ease-in-out;
+    position: absolute;
+    left: -100%;
+}
+.loader-2.--next-1{
+    animation: spin-2 3s  0.6s ease-in-out;
+    background: var(--glow-color);
+}
+.loader-2.--next-2{
+    animation: spin-2 3s  0.8s ease-in-out;
+    background: var(--glow-color);
+}
   
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { 
+        left: 0px;
+        width: 0px
+     }
+    50% { 
+        width: 100%; 
+        }
+    100%{
+        right: 0px;
+        left: auto;
+        width: 0px;
+    }
+  }
+  @keyframes spin-2{
+    0% { 
+        left: -100%;        
+     }
+    100% { 
+        left: 100vw;
+        
+        }
   }
