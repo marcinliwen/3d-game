@@ -36,8 +36,11 @@ window.onload = () =>{
 
     
     
-
+    /**
+     * start game
+     */
     counterContener.addEventListener('click', function(){
+        userOutput.style.color = "#fff";
         countRounds = 0;
         var headerhight = headerTitle.offsetHeight;
         userOutput.innerHTML = "XXX";
