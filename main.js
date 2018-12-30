@@ -1,5 +1,17 @@
 window.onload = () =>{
-    
+        /**
+     * 
+     * 
+     * register service worker
+     */
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+                .register('./sw.js')
+                .then(function() { console.log('Service Worker Registered'); });
+    }
+
+
     const afterLoad = document.querySelector('.after-load')
     const loader = document.querySelector('.loader-container');
     setTimeout(function(){
