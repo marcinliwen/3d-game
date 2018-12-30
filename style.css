@@ -22,6 +22,18 @@ body, html{
     width: 100%;
 }
 
+#pwa-button{
+    position: absolute;
+    bottom: -50px;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+
+}
+
+#pwa-button.show{
+    bottom: 0px;
+}
 header{
     width: 100%;
     margin-bottom: 32px;
