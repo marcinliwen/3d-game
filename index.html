@@ -22,74 +22,72 @@
 <link rel="apple-touch-icon" sizes="152x152" href="ios/ios-appicon-152-152.png">
 </head>
 <body>
-    <header>
-        <div class="header--title"><h1><span>guess</span> the secret number</h1></div>
-        <aside class="descritption">
-            <ol>
-                <li>only 3 digits that doas not repeat</li>
-                <li>only 10 rounds</li>
-                <li>tap 3 different numbers then "check"</li>
-                <li>"C": remove last tapped number</li>
-            </ol>
-        </aside>
-        <section class="display">
-            <div class="output "><span class="user__input"></span></div>
-            <div class="user_inputs">
+    <section class="after-load">
+        <header>
+            <div class="header--title"><h1><span>guess</span> the secret number</h1></div>
+            <aside class="descritption">
+                <ol>
+                    <li>only 3 digits that doas not repeat</li>
+                    <li>only 10 rounds</li>
+                    <li>tap 3 different numbers then "check"</li>
+                    <li>"C": remove last tapped number</li>
+                </ol>
+            </aside>
+            <section class="display">
+                <div class="output "><span class="user__input"></span></div>
+                <div class="user_inputs">
+                    
+                </div>    
+                <div class="correct--container"> 
+                        <div><p>correct digit</p></div>
+                        <div><p>correct place</p></div>
+                </div>        
                 
-            </div>    
-            <div class="correct--container"> 
-                    <div><p>correct digit</p></div>
-                    <div><p>correct place</p></div>
-            </div>        
-            
-        </section>
-        <section class="functionals">
-            
-            <div class="round __settings  __digits"></div>
-            <div class="round __counter">
-                <svg aria-hidden="true" 
-                    data-prefix="fas" 
-                    data-icon="play" 
-                    class="svg-play fa-play fa-w-14" 
-                    role="img" 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 448 512">
-                    <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
-                </svg>
-            </div>
-            
-            <div class="round __settings __places"></div>
-        </section>        
-    </header>
-    <main>        
-        <section class="keyboard">
-            <form class="key__container">
-               <input type="button" class="key zero" value="0">
-               <input type="button" class="key zero" value="1">
-               <input type="button" class="key zero" value="2">
-               <input type="button" class="key zero" value="3">
-               <input type="button" class="key zero" value="4">
-               <input type="button" class="key zero" value="5">
-               <input type="button" class="key zero" value="6">
-               <input type="button" class="key zero" value="7">
-               <input type="button" class="key zero" value="8">
-               <input type="button" class="key zero" value="9">
-            </form>            
-        </section>
-        <section class="action-buttons"> 
-            <div type="button" class="reset" >C</div>
-            <button type="button" class="check" disabled>check</button>
-        </section>
-    </main>
-    <footer></footer>
+            </section>
+            <section class="functionals">
+                
+                <div class="round __settings  __digits"></div>
+                <div class="round __counter">
+                    <svg aria-hidden="true" 
+                        data-prefix="fas" 
+                        data-icon="play" 
+                        class="svg-play fa-play fa-w-14" 
+                        role="img" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 448 512">
+                        <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+                    </svg>
+                </div>
+                
+                <div class="round __settings __places"></div>
+            </section>        
+        </header>
+        <main>        
+            <section class="keyboard">
+                <form class="key__container">
+                <input type="button" class="key zero" value="0">
+                <input type="button" class="key zero" value="1">
+                <input type="button" class="key zero" value="2">
+                <input type="button" class="key zero" value="3">
+                <input type="button" class="key zero" value="4">
+                <input type="button" class="key zero" value="5">
+                <input type="button" class="key zero" value="6">
+                <input type="button" class="key zero" value="7">
+                <input type="button" class="key zero" value="8">
+                <input type="button" class="key zero" value="9">
+                </form>            
+            </section>
+            <section class="action-buttons"> 
+                <div type="button" class="reset" >C</div>
+                <button type="button" class="check" disabled>check</button>
+            </section>
+        </main>
+    </section>
     <div class="loader-container">
         <div class="loader"></div>
         <div class="loader-2"></div>
         <div class="loader-2 --next-1"></div>
-        <div class="loader-2 --next-2"></div>
-        
-        
-        
+        <div class="loader-2 --next-2"></div>     
     </div>    
     <script src="main.js"></script>
 </body>

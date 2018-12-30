@@ -16,6 +16,10 @@ body, html{
     background: #263238;
 }
 
+.after-load{
+    opacity: 0;
+}
+
 header{
     width: 100%;
     margin-bottom: 32px;
@@ -303,6 +307,7 @@ aside.descritption {
 
 aside.descritption li {
     margin-bottom: 4px;
+    text-align: left;
 }
 
 .header--title span {

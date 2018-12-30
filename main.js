@@ -1,8 +1,11 @@
 window.onload = () =>{
     
+    const afterLoad = document.querySelector('.after-load')
     const loader = document.querySelector('.loader-container');
     setTimeout(function(){
+        afterLoad.style.opacity =  1;
         loader.style.display = " none";
+
     }, 4000)
     
 
