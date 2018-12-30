@@ -3,7 +3,7 @@
  * install service worker
  */
 
-var cacheName = 'pwa-test-v3';
+var cacheName = 'pwa-test-v4';
 var filesToCache = [
     '/',
     '/index.html',

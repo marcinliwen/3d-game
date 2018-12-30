@@ -29,9 +29,12 @@ body, html{
     right: 0px;
     height: 50px;
     text-align: center;
-    color: #fff;
     font-size: 18px;
-
+    color: #fff;
+    box-shadow: 0 0 14px -1px black;
+    line-height: 14px;
+    cursor: pointer;
+    letter-spacing: 3px;
 }
 
 #pwa-button.show{
