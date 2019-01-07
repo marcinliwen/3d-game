@@ -40,6 +40,7 @@ body, html{
 
 #pwa-button.show{
     bottom: 0px;
+    transition-delay: 2s;
 }
 header{
     width: 100%;
