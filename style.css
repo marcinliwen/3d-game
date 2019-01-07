@@ -24,7 +24,7 @@ body, html{
 
 
 #pwa-button{
-    position: absolute;
+    position: fixed;
     bottom: -50px;
     left: 0px;
     right: 0px;
