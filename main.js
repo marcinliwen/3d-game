@@ -43,6 +43,7 @@ window.onload = () =>{
       });
       
       document.getElementById('close-pwa-button').addEventListener('click', (e)=>{
+          addButton.preventDefault();
           addButton.classList.remove('show');
           addButton.style.display = "none"
       })
