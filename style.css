@@ -43,7 +43,8 @@ body, html{
 
 #pwa-button.show{
     bottom: 0px;
-    transition-delay: 2s;
+    transition-delay: 5s;
+    transition-duration: .55s;
 }
 header{
     width: 100%;

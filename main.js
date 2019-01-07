@@ -40,7 +40,12 @@ window.onload = () =>{
 			}
 			deferredPrompt = null;
 		  });
-	  });
+      });
+      
+      document.getElementById('close-pwa-button').addEventListener('click', (e)=>{
+          addButton.classList.remove('show');
+          addButton.style.display = "none"
+      })
 
     /**
      * main functions
