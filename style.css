@@ -6,7 +6,7 @@
 }
 *{
     box-sizing: border-box;
-    transition: all .55s ease-in-out;
+    /*transition: all .55s ease-in-out;*/
 }
 body, html{
     width: 100%;
@@ -16,11 +16,12 @@ body, html{
     background: #263238;
 }
 
+
 .after-load{
-    opacity: 0;
     height: 100%;
     width: 100%;
 }
+
 
 #pwa-button{
     position: absolute;
@@ -350,7 +351,7 @@ aside.descritption ol {
     right: 0px;
     background: #263238;
     z-index: 1;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     overflow: hidden;

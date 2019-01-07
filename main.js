@@ -47,7 +47,7 @@ window.onload = () =>{
      */
 
 
-
+    /*
     const afterLoad = document.querySelector('.after-load')
     const loader = document.querySelector('.loader-container');
     setTimeout(function(){
@@ -55,7 +55,7 @@ window.onload = () =>{
         loader.style.display = " none";
 
     }, 4000)
-    
+    */
 
 
     const keys = document.getElementsByClassName('key');    
@@ -88,6 +88,7 @@ window.onload = () =>{
      * start game
      */
     counterContener.addEventListener('click', function(){
+        
         userOutput.style.color = "#fff";
         countRounds = 0;
         var headerhight = headerTitle.offsetHeight;
@@ -98,12 +99,17 @@ window.onload = () =>{
         console.log(secretNumber);
         setTimeout(function(){
             userInputs.innerHTML = "";
+            description.style.transitionDuration = ".55s";
             description.style.opacity = "0";
+            counterContener.style.transitionDuration = ".55s";
             counterContener.style.transform = "scale(1)";
+            header.style.transitionDuration = ".55s";
             header.style.height = "40%";
             setTimeout(function(){
                 main.style.transform = "translate(0px, 0px)";
+                main.style.transitionDuration = ".55s"
                 counterContener.innerHTML = "";
+                correctDigits.style.transitionDuration = ".55s";
                 correctDigits.style.transform = "translate(-16px, 0px)";
                 correctPlaces.style.transform = "translate(16px, 0px)";                
                 headerTitle.style.marginTop = "-"+headerhight+"px";                
@@ -111,9 +117,7 @@ window.onload = () =>{
                 correctness.style.opacity = "1";
                 description.style.display = "none";
 
-            }, 550);
-            
-            
+            }, 550);            
         }, 350);
         
         
