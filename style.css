@@ -25,17 +25,20 @@ body, html{
 
 #pwa-button{
     position: fixed;
-    bottom: -50px;
+    bottom: 0;
     left: 0px;
     right: 0px;
     height: 50px;
     text-align: center;
     font-size: 18px;
-    color: #fff;
+    color: var(--dark-color);
     box-shadow: 0 0 14px -1px black;
     line-height: 14px;
     cursor: pointer;
     letter-spacing: 3px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
 }
 
 #pwa-button.show{
@@ -405,3 +408,13 @@ aside.descritption ol {
         
         }
   }
+
+#pwa-button img {
+    margin-right: 16px;
+}
+
+#pwa-button p {
+    color: blue;
+    font-family: monospace;
+    letter-spacing: 0;
+}
